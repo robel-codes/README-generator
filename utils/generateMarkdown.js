@@ -31,22 +31,20 @@ function generateMarkdown(data) {
   
   ### Installation
   ###### [Back to Table of Contents](#Table-of-Contents)
-  ${data.contribute}
+  ${data.installation}
   
   
   ## Usage
   ### Workflow [Back to Table of Contents](#Table-of-Contents)
-  ${data.accomplish}
+  ${data.usage}
   
   
   ### Screenshots (Building this application)
   ###### [Back to Table of Contents](#Table-of-Contents)
-  #### Demo I createad ![script.js](${data.scriptjs})
+  #### Demo I createad ![Screen shot 1](${data.screenshot1})
   
-  #### Demo I createad ![fileGenerator.js](${data.fileGnerator})
-  
-  #### Demo I createad ![ReadMe.md](${data.ReadMe})
-  
+  #### Demo I createad ![screenshot 2](${data.screenshot2})
+
    
   ## License
   ${data.license}
@@ -60,13 +58,19 @@ function generateMarkdown(data) {
   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. 
 
 
-  ### Contribution Guidelines
+  ## Contribution Guidelines
   ###### [Back to Table of Contents](#Table-of-Contents)
   ${data.contribute}
   
   ## Test Instructions
   ###### [Back to Table of Contents](#Table-of-Contents)
   ${data.test}
+
+  ## Questions
+  ###### [Back to Table of Contents](#Table-of-Contents)
+  ${data.userName}
+
+  You can email me if you have any questions at: ${data.email}
  
 `;
 }
