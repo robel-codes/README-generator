@@ -8,7 +8,7 @@ function renderLicenseBadge(license) {
   }
   if (license === "BSD 3") {
     badge =
-      "[[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)";
+      "[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)";
   }
   if (license === "GVL-GPL 3.0") {
     badge =
@@ -25,13 +25,6 @@ function renderLicenseBadge(license) {
  
 }
 
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
-function renderLicenseLink(license) {
-
- 
-}
-
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
@@ -40,17 +33,19 @@ function renderLicenseSection(license) {
   }
   else {
     return `## License
-    Project license: ${license}`;
+    Project license: ${license}`  
   }
 }
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-  return `# ${data.title} ${renderLicenseBadge(data.license)}
+  return `# ${data.title}  ${renderLicenseBadge(data.license)}
   
   ## Repository Description
   ###### [Back to Table of Contents](#table-of-contents)
   ${data.description}
+  
+  ---
 
   ## Table of Contents
   * [Repository Description](#repository-description)
@@ -60,38 +55,45 @@ function generateMarkdown(data) {
   * [Test Instructions](#test-instructions)
   * [Questions](#questions)
   
-  
+  ---
+
   ### Installation
   ###### [Back to Table of Contents](#table-of-contents)
   ${data.installation}
   
-  
-  ## Usage
-  ### Workflow [Back to Table of Contents](#table-of-contents)
-  ${data.usage}
-  
-  
-  ### Screenshots (Building this application)
-  ###### [Back to Table of Contents](#table-of-contents)
-  #### Demo I createad ![Screen shot 1](${data.screenshot1})
-  
-  #### Demo I createad ![screenshot 2](${data.screenshot2})
+  ---
 
-  ${renderLicenseSection(data.license)}
+  ## Usage
+  #### [Back to Table of Contents](#table-of-contents)
+  ${data.usage}
+
+  ---
+
+  ${renderLicenseSection(data.license)} 
   
+  ${renderLicenseBadge(data.license)}
+
+  ---
+
   ## Contribution Guidelines
   ###### [Back to Table of Contents](#table-of-contents)
   ${data.contribute}
-  
+
+  ---
+
   ## Test Instructions
   ###### [Back to Table of Contents](#table-of-contents)
   ${data.test}
 
+  ---
+
   ## Questions
   ###### [Back to Table of Contents](#table-of-contents)
-  ${data.userName}
+  If you have any questions at: 
 
-  You can email me if you have any questions at: ${data.email}
+  Email [${data.email}](mailto:${data.email}),
+
+  GitHub [@${data.userName}](https://github.com/${data.userName})
  
 `;
 }
