@@ -6,7 +6,7 @@ const inquirer = require("inquirer");
 const questions = [
     {
         type: "input",
-        message: "What is the title of your repository?",
+        message: "What is the title of your repository?(required)",
         name: "title",
         validate: titleInput => {
             if (titleInput) {
@@ -18,7 +18,7 @@ const questions = [
         }
     },{
         type: "input",
-        message: "Please Provide a short description explaining the what, why, and how of your project?",
+        message: "Please Provide a short description explaining the what, why, and how of your project?(required)",
         name: "description",
         validate: descriptionInput => {
             if (descriptionInput) {
@@ -30,7 +30,7 @@ const questions = [
         }
     },{
         type: "input",
-        message: "What is your GitHub user name?",
+        message: "What is your GitHub user name?(required)",
         name: "userName",
         validate: nameInput => {
             if (nameInput) {
@@ -42,7 +42,7 @@ const questions = [
         }
     },{
         type: "input",
-        message: "What is your email?",
+        message: "What is your email?(required)",
         name: "email",
         validate: emailInput => {
             if (emailInput) {
@@ -64,7 +64,7 @@ const questions = [
         }
     },{
         type: "input",
-        message: "Provide instruction for use?",
+        message: "Provide instruction for use?(required)",
         name: "usage",
         validate: UsageInput => {
             if (UsageInput) {
@@ -76,7 +76,7 @@ const questions = [
         }
     },{
         type: "input",
-        message: "Please State if others can contribute.",
+        message: "Please State if others can contribute.(required)",
         name: "contribute",
         validate: contributeInput => {
             if (contributeInput) {
@@ -88,7 +88,7 @@ const questions = [
         }
     },{
         type: "input",
-        message: "Please state any test that are required",
+        message: "Please state any test that are required(required)",
         name: "test",
         validate: testInput => {
             if (testInput) {
@@ -101,7 +101,7 @@ const questions = [
     },{
         type: "list",
         name: "license",
-        message: "Please select which license you would like to use.",
+        message: "Please select which license you would like to use.(required)",
         choices: [
             "APACHE 2.0",
             "BSD 3",
@@ -140,7 +140,7 @@ function writeToFile(fileName, data) {
 // TODO: Create a function to initialize app
 function init() {
     inquirer.prompt(questions).then((answers) => {
-        writeToFile('./utils/SampleReadme.md', generateMarkdown(answers))});
+        writeToFile('./assets/README.md', generateMarkdown(answers))});
 }
 
 
